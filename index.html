@@ -16,8 +16,21 @@
     <div
       class="h-screen flex justify-center items-center bg-gradient-to-br from-indigo-500 via-sky-500 to-emerald-500">
       <div class="flex flex-col gap-4">
-        <div id="timer">
-          <h1 class="text-9xl font-bold w-fit">9:00</h1>
+        <div
+          id="timer"
+          class="flex flex-row items-center gap-4">
+          <!-- <h1 class="text-9xl font-bold w-fit">9:00</h1> -->
+          <div
+            class="relative w-[400px] h-[200px] border-8 border-white rounded-[50px] p-4">
+            <div
+              id="battery-bar"
+              class="w-full h-full bg-white rounded-[25px] flex justify-center items-center"></div>
+            <h2
+              class="absolute w-full text-center top-1/2 left-0 -translate-y-1/2 text-6xl font-bold">
+              50 min
+            </h2>
+          </div>
+          <div class="h-[60px] w-[20px] rounded-r-full bg-white"></div>
         </div>
         <button
           id="timer-button"
@@ -29,6 +42,6 @@
     <div id="timer"></div>
     <button id="timer-button">Button</button>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-     <script src="assets/script.js"></script>
+    <script src="assets/script.js"></script>
   </body>
 </html>
