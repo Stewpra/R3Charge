@@ -9,12 +9,26 @@
       rel="stylesheet"
       href="assets/style.css" />
     <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div class="h-screen flex justify-center items-center">
+      <div class="w-fit flex flex-col gap-4">
+        <div id="timer">
+          <h1 class="text-9xl font-bold w-fit">9:00</h1>
+        </div>
+        <button
+          id="timer-button"
+          class="btn">
+          Button
+        </button>
+      </div>
+    </div>
 
-    <div id="timer"></div>
-    <button id="timer-button">Button</button>
+    <script src="assets/script.js"></script>
   </body>
-  <script src="assets/script.js"></script>
 </html>
