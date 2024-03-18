@@ -1,11 +1,14 @@
+const timerButton = document.querySelector('#timer-button')
 function storeDataInLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 
 function init() {}
 
-function handleClick() {}
+function handleClick() {
+  console.log("test click")
+}
 
-addEventListener("click", handleClick());
+timerButton.addEventListener("click", handleClick);
 
 init();
