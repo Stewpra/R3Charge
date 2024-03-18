@@ -1,4 +1,5 @@
 const timerButton = document.querySelector('#timer-button');
+const batteryBar = document.querySelector('#battery-bar');
 
 function storeDataInLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
@@ -14,9 +15,16 @@ function startTimer(seconds) {
       clearInterval(interval);
       console.log('Countdown complete!');
     } else {
+      updateBattery(timer, 30);
       timer--;
     }
   }, 1000);
+}
+
+function updateBattery(time, totalTime) {
+  const percentage = (time / totalTime) * 100;
+  console.log(percentage);
+  batteryBar.style.width = `${percentage}%`;
 }
 
 function handleClick() {
@@ -26,9 +34,7 @@ function handleClick() {
 timerButton.addEventListener('click', handleClick);
 
 function init() {
-  startTimer(10);
+  startTimer(30);
 }
 
 init();
-
-
