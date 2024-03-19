@@ -56,8 +56,8 @@ function getTimeUnits (time) {
     return modulo;
   }
 
-  const totalHours = getHours(totalSeconds);
-  const remainingFromHours = moduloFromHour(totalSeconds);
+  const totalHours = getHours(time);
+  const remainingFromHours = moduloFromHour(time);
 
   const totalMinutes = getMinutes(remainingFromHours);
   const remainingFromMinutes = moduloFromMinutes(remainingFromHours);
@@ -67,7 +67,7 @@ function getTimeUnits (time) {
   return {totalHours, totalMinutes, totalSeconds};
 }
 
-getTimeUnits(8400);
+getTimeUnits(time);
 
 function fetchData(url) {
   fetch(url, {
