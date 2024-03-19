@@ -29,10 +29,16 @@ function displayContent(type) {
     if (type === 'quote') {
         content = 'This is a quote.';
     }
+}
+container.innerHTML = 'quote-container';
+
+function displayContent(type) {
+    var container = document.getElementById('document.container');
+    var content;
     if (type === 'joke') {
         content = 'This is a joke.';
     } 
-    container.innerHTML = content;
+    container.innerHTML = 'joke-container';
 }
 
 function updateBattery(time, totalTime) {
