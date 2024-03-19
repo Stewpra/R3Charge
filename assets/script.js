@@ -28,20 +28,27 @@ function updateBattery(time, totalTime) {
 }
 
 function fetchData(url) {
-  fetch(url)
+  fetch(url, {
+    headers: {
+      Accept: "text/plain",
+    },
+  })
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response error");
       }
-      return response.json();
+      return response.text();
     })
     .then((data) => {
       console.log(data);
     })
     .catch((error) => {
-      console.error("There was a problem the fetch:", error);
+      console.error("There was a problem with the fetch:", error);
     });
 }
+
+// Fetch a random dad joke
+fetchData("https://icanhazdadjoke.com/");
 
 function handleClick() {
   console.log("test click");
