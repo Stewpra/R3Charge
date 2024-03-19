@@ -40,12 +40,24 @@ function getHour(time){
 }
 console.log(getHour(65));
 
+function moduloFromHour(time){
+  let timeRemaining = time;
+  let modulo = timeRemaining % 3600;
+  return getMinutes(modulo);
+}
+
 function getMinutes(time){
   let timeRemaining = time;
   let minutes = Math.floor(timeRemaining/60);
   return minutes;
 }
 console.log(getMinutes(65));
+
+function moduloFromMinutes(time){
+  let timeRemaining = time;
+  let modulo = timeRemaining % 60;
+  return modulo(getSeconds);
+}
 
 function getSeconds(time){
   let timeRemaining = time;
@@ -54,12 +66,7 @@ function getSeconds(time){
 }
 console.log(getSeconds(65));
 
-/*
-const minutes = Math.floor(time / 60);
-const seconds = time - minutes * 60;
-const hours = Math.floor(time / 3600);
-time = time - hours * 3600;
-*/
+
 function fetchData(url) {
   fetch(url, {
     headers: {
