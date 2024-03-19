@@ -28,3 +28,16 @@ function getTimeUnits(time) {
   const totalSeconds = remainingFromMinutes;
   return { totalHours, totalMinutes, totalSeconds };
 }
+
+function updateBattery(time, totalTime) {
+  const percentage = (time / totalTime) * 100;
+  batteryBar.style.width = `${percentage}%`;
+  if (percentage < 10) {
+    height = 15 * percentage;
+    batteryBar.style.height = `${height}px`;
+  }
+  if (percentage < 8) {
+    height = '105px';
+    batteryBar.style.height = height;
+  }
+}
