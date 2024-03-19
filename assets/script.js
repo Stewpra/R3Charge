@@ -63,7 +63,7 @@ async function getJoke() {
 }
 
 async function getQuote() {
-	const quoteUrl = 'https://type.fit/api/quotes';
+	const quoteUrl = 'https://api.quotable.io/random';
 	const data = await fetchData(quoteUrl);
 	console.log(data);
 	return data;
