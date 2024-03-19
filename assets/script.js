@@ -1,6 +1,24 @@
 const timerButton = document.querySelector('#timer-button');
 const batteryBar = document.querySelector('#battery-bar');
 
+function getHour(){
+  const d = newDate();
+  let hours = d.getHours();
+}
+console.log(getHour);
+
+function getMinutes(){
+  const d = newDate();
+  let minutes = d.getMinutes();
+}
+console.log(getMinutes);
+
+function getSeconds(){
+  const d = newDate();
+  let seconds = d.getSeconds();
+}
+console.log(getSeconds);
+
 function storeDataInLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
