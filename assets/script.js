@@ -1,5 +1,7 @@
+let container = document.getElementById('content-container');
+
 function displayContent(content) {
-    contentContainer.textContent = content;
+    container.textContent = content;
 }
 
 const timerButton = document.querySelector("#timer-button");
@@ -25,12 +27,6 @@ function startTimer(seconds) {
   }, 1000);
 
 }
-function displayContent(str) {
-    if (str === 'container') {
-    }
-}
-container.innerHTML = 'text-container';
-
 
 function updateBattery(time, totalTime) {
   const percentage = (time / totalTime) * 100;
