@@ -25,9 +25,3 @@ function startTimer(seconds) {
 
   storeDataInLocalStorage('startTime', getCurrentTime());
 }
-
-function updateBattery(time, totalTime) {
-  const percentage = (time / totalTime) * 100;
-  console.log(percentage);
-  batteryBar.style.width = `${percentage}%`;
-}
