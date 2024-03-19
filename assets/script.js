@@ -19,6 +19,20 @@ function startTimer(seconds) {
       timer--;
     }
   }, 1000);
+
+}
+
+function displayContent(type) {
+    var container = document.getElementById('document.container');
+    var content;
+
+    if (type === 'quote') {
+        content = 'This is a quote.';
+    }
+    if (type === 'joke') {
+        content = 'This is a joke.';
+    } 
+    container.innerHTML = content;
 }
 
 function updateBattery(time, totalTime) {
