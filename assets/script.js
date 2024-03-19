@@ -33,39 +33,41 @@ function updateBattery(time, totalTime) {
   batteryBar.style.width = `${percentage}%`;
 }
 
-function getHour(time){
-  let timeRemaining = time;
-  let hours = Math.floor(timeRemaining/3600);
-  return hours;
-}
-console.log(getHour(65));
 
-function moduloFromHour(time){
-  let timeRemaining = time;
-  let modulo = timeRemaining % 3600;
-  return getMinutes(modulo);
+
+function getTimeUnits (time) {
+  function getHours(totalSeconds){
+    let hours = Math.floor(totalSeconds/3600);
+    return hours;
+  }
+  
+  function moduloFromHour(totalSeconds){
+    let modulo = totalSeconds % 3600;
+    return modulo;
+  }
+  
+  function getMinutes(totalSeconds){
+    let minutes = Math.floor(totalSeconds/60);
+    return minutes;
+  }
+
+  function moduloFromMinutes(totalSeconds){
+    let modulo = totalSeconds % 60;
+    return modulo;
+  }
+
+  const totalHours = getHours(totalSeconds);
+  const remainingFromHours = moduloFromHour(totalSeconds);
+
+  const totalMinutes = getMinutes(remainingFromHours);
+  const remainingFromMinutes = moduloFromMinutes(remainingFromHours);
+
+  const totalSeconds = remainingFromMinutes;
+  console.log(totalHours, totalMinutes, totalSeconds);
+  return {totalHours, totalMinutes, totalSeconds};
 }
 
-function getMinutes(time){
-  let timeRemaining = time;
-  let minutes = Math.floor(timeRemaining/60);
-  return minutes;
-}
-console.log(getMinutes(65));
-
-function moduloFromMinutes(time){
-  let timeRemaining = time;
-  let modulo = timeRemaining % 60;
-  return modulo(getSeconds);
-}
-
-function getSeconds(time){
-  let timeRemaining = time;
-  let seconds = Math.floor(timeRemaining);
-  return seconds;
-}
-console.log(getSeconds(65));
-
+getTimeUnits(8400);
 
 function fetchData(url) {
   fetch(url, {
