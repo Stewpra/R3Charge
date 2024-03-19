@@ -39,7 +39,7 @@ function updateBattery(time, totalTime) {
   batteryBar.style.width = `${percentage}%`;
 }
 
-async function fetchDate(url) {
+async function fetchData(url) {
   let data;
   try {
     const res = await fetch(url, {
