@@ -5,6 +5,12 @@ function storeDataInLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 
+function getDataFromLocalStorage(key) {
+  return localStorage.getItem(key);
+}
+
+console.log(getDataFromLocalStorage('startTime'));
+
 function getCurrentTime() {
   return dayjs().unix();
 }
@@ -33,29 +39,33 @@ function updateBattery(time, totalTime) {
   batteryBar.style.width = `${percentage}%`;
 }
 
-function fetchData(url) {
-  return fetch(url, {
-    headers: {
-      Accept: 'text/plain',
-    },
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Network response error');
-      }
-      return response.text();
-    })
-    .catch((error) => {
-      console.error('There was a problem with the fetch:', error);
+async function fetchDate(url) {
+  let data;
+  try {
+    const res = await fetch(url, {
+      headers: {
+        accept: 'aplication/json',
+      },
     });
+    data = await res.json();
+  } catch (err) {
+    console.error(err);
+  } finally {
+    return data;
+  }
 }
 
-function getJoke() {
+async function getJoke() {
   const jokeUrl = 'https://icanhazdadjoke.com/';
-  return fetchData(jokeUrl);
+  const data = await fetchData(jokeUrl);
+  return data;
 }
 
-console.log(getJoke());
+async function getQuote() {
+  const quoteUrl = 'https://api.api-ninjas.com/v1/quotes?category=happiness';
+  const data = await fetchData(quoteUrl);
+  return data;
+}
 
 function handleClick() {
   console.log('test click');
