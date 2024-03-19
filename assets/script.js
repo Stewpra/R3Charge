@@ -34,6 +34,8 @@ function updateBattery(time, totalTime) {
 }
 
 function fetchData(url) {
+	let data = '';
+
 	return fetch(url, {
 		headers: {
 			Accept: 'text/plain',
@@ -43,7 +45,12 @@ function fetchData(url) {
 			if (!response.ok) {
 				throw new Error('Network response error');
 			}
+
 			return response.text();
+		})
+		.then((text) => {
+			let data = text;
+			return data;
 		})
 		.catch((error) => {
 			console.error('There was a problem with the fetch:', error);
@@ -53,6 +60,11 @@ function fetchData(url) {
 function getJoke() {
 	const jokeUrl = 'https://icanhazdadjoke.com/';
 	return fetchData(jokeUrl);
+}
+
+function getQuote() {
+	const quoteUrl = '';
+	return fetchData(quoteUrl);
 }
 
 function handleClick() {
