@@ -5,6 +5,10 @@ function storeDataInLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 
+function getCurrentTime() {
+  return JSON.stringify(dayjs());
+}
+
 function startTimer(seconds) {
   let timer = seconds;
 
@@ -19,6 +23,8 @@ function startTimer(seconds) {
       timer--;
     }
   }, 1000);
+
+  storeDataInLocalStorage('startTime', getCurrentTime());
 }
 
 function updateBattery(time, totalTime) {
