@@ -37,6 +37,14 @@ function updateBattery(time, totalTime) {
   const percentage = (time / totalTime) * 100;
   console.log(percentage);
   batteryBar.style.width = `${percentage}%`;
+  if (percentage > 10) {
+    batteryBar.style.height = '100%';
+    batteryBar.style.borderRadius = '25px';
+  }
+  if (percentage <= 10) {
+    batteryBar.style.height = '90%';
+    batteryBar.style.borderRadius = '100% 100% 0 0';
+  }
 }
 
 function fetchData(url) {
