@@ -5,6 +5,12 @@ function storeDataInLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 
+function getDataFromLocalStorage(key) {
+  return localStorage.getItem(key);
+}
+
+console.log(getDataFromLocalStorage('startTime'));
+
 function getCurrentTime() {
   return dayjs().unix();
 }
