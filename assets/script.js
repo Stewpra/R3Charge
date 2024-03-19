@@ -34,7 +34,7 @@ function updateBattery(time, totalTime) {
 }
 
 function fetchData(url) {
-	fetch(url, {
+	return fetch(url, {
 		headers: {
 			Accept: 'text/plain',
 		},
@@ -45,9 +45,6 @@ function fetchData(url) {
 			}
 			return response.text();
 		})
-		.then((data) => {
-			console.log(data);
-		})
 		.catch((error) => {
 			console.error('There was a problem with the fetch:', error);
 		});
@@ -55,8 +52,7 @@ function fetchData(url) {
 
 function getJoke() {
 	const jokeUrl = 'https://icanhazdadjoke.com/';
-
-	fetchData(jokeUrl);
+	return fetchData(jokeUrl);
 }
 
 function handleClick() {
