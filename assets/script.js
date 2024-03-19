@@ -6,7 +6,7 @@ function storeDataInLocalStorage(key, data) {
 }
 
 function getDataFromLocalStorage(key) {
-  return localStorage.getItem(key);
+	return localStorage.getItem(key);
 }
 
 console.log(getDataFromLocalStorage('startTime'));
@@ -58,12 +58,14 @@ async function fetchData(url) {
 async function getJoke() {
 	const jokeUrl = 'https://icanhazdadjoke.com/';
 	const data = await fetchData(jokeUrl);
+	console.log(data);
 	return data;
 }
 
 async function getQuote() {
-	const quoteUrl = 'https://api.api-ninjas.com/v1/quotes?category=happiness';
+	const quoteUrl = 'https://api.quotable.io/random';
 	const data = await fetchData(quoteUrl);
+	console.log(data);
 	return data;
 }
 
