@@ -38,8 +38,10 @@ function displayContent(type) {
     if (type === 'joke') {
         content = 'This is a joke.';
     } 
-    container.innerHTML = 'joke-container';
 }
+
+container.innerHTML = 'joke-container';
+
 
 function updateBattery(time, totalTime) {
   const percentage = (time / totalTime) * 100;
