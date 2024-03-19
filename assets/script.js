@@ -1,24 +1,6 @@
 const timerButton = document.querySelector('#timer-button');
 const batteryBar = document.querySelector('#battery-bar');
 
-function getHour(){
-  const d = newDate();
-  let hours = d.getHours();
-}
-console.log(getHour);
-
-function getMinutes(){
-  const d = newDate();
-  let minutes = d.getMinutes();
-}
-console.log(getMinutes);
-
-function getSeconds(){
-  const d = newDate();
-  let seconds = d.getSeconds();
-}
-console.log(getSeconds);
-
 function storeDataInLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
@@ -51,6 +33,30 @@ function updateBattery(time, totalTime) {
   batteryBar.style.width = `${percentage}%`;
 }
 
+function getHour(){
+  let timeRemaining = time;
+  let hours = timeRemaining/3600;
+}
+console.log(getHour);
+
+function getMinutes(){
+  let timeRemaing = time;
+  let minutes = timeRemaing/60;
+}
+console.log(getMinutes);
+
+function getSeconds(){
+  let timeRemaing = time;
+  let seconds = timeRemaing*60;
+}
+console.log(getSeconds);
+
+/*
+const minutes = Math.floor(time / 60);
+const seconds = time - minutes * 60;
+const hours = Math.floor(time / 3600);
+time = time - hours * 3600;
+*/
 function fetchData(url) {
   fetch(url, {
     headers: {
