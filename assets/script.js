@@ -33,23 +33,26 @@ function updateBattery(time, totalTime) {
   batteryBar.style.width = `${percentage}%`;
 }
 
-function getHour(){
+function getHour(time){
   let timeRemaining = time;
-  let hours = timeRemaining/3600;
+  let hours = Math.floor(timeRemaining/3600);
+  return hours;
 }
-console.log(getHour);
+console.log(getHour(65));
 
-function getMinutes(){
-  let timeRemaing = time;
-  let minutes = timeRemaing/60;
+function getMinutes(time){
+  let timeRemaining = time;
+  let minutes = Math.floor(timeRemaining/60);
+  return minutes;
 }
-console.log(getMinutes);
+console.log(getMinutes(65));
 
-function getSeconds(){
-  let timeRemaing = time;
-  let seconds = timeRemaing*60;
+function getSeconds(time){
+  let timeRemaining = time;
+  let seconds = Math.floor(timeRemaining);
+  return seconds;
 }
-console.log(getSeconds);
+console.log(getSeconds(65));
 
 /*
 const minutes = Math.floor(time / 60);
