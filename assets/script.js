@@ -47,28 +47,33 @@ function updateBattery(time, totalTime) {
   }
 }
 
-function fetchData(url) {
-  fetch(url, {
-    headers: {
-      Accept: 'text/plain',
-    },
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Network response error');
-      }
-      return response.text();
-    })
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((error) => {
-      console.error('There was a problem with the fetch:', error);
+async function fetchData(url) {
+  let data;
+  try {
+    const res = await fetch(url, {
+      headers: {
+        accept: 'aplication/json',
+      },
     });
+    data = await res.json();
+  } catch (err) {
+    console.error(err);
+  } finally {
+    return data;
+  }
 }
 
-// Fetch a random dad joke
-fetchData('https://icanhazdadjoke.com/');
+async function getJoke() {
+  const jokeUrl = 'https://icanhazdadjoke.com/';
+  const data = await fetchData(jokeUrl);
+  return data;
+}
+
+async function getQuote() {
+  const quoteUrl = 'https://api.api-ninjas.com/v1/quotes?category=happiness';
+  const data = await fetchData(quoteUrl);
+  return data;
+}
 
 function handleClick() {
   console.log('test click');
