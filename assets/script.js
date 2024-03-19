@@ -50,7 +50,7 @@ function fetchData(url) {
 		})
 		.then((text) => {
 			let data = text;
-			return data;
+			return text;
 		})
 		.catch((error) => {
 			console.error('There was a problem with the fetch:', error);
@@ -63,7 +63,7 @@ function getJoke() {
 }
 
 function getQuote() {
-	const quoteUrl = '';
+	const quoteUrl = 'https://api.api-ninjas.com/v1/quotes?category=happiness';
 	return fetchData(quoteUrl);
 }
 
