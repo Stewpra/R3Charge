@@ -77,7 +77,7 @@ async function fetchData(url) {
   try {
     const res = await fetch(url, {
       headers: {
-        accept: 'aplication/json',
+        accept: 'application/json',
       },
     });
     data = await res.json();
