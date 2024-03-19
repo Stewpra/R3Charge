@@ -67,7 +67,7 @@ function getTimeUnits (time) {
   return {totalHours, totalMinutes, totalSeconds};
 }
 
-getTimeUnits(8400);
+getTimeUnits(8500);
 
 function fetchData(url) {
   fetch(url, {
