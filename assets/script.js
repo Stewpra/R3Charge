@@ -1,3 +1,7 @@
+function displayContent(content) {
+    contentContainer.textContent = content;
+}
+
 const timerButton = document.querySelector("#timer-button");
 const batteryBar = document.querySelector("#battery-bar");
 
@@ -21,26 +25,11 @@ function startTimer(seconds) {
   }, 1000);
 
 }
-
-function displayContent(type) {
-    var container = document.getElementById('document.container');
-    var content;
-
-    if (type === 'quote') {
-        content = 'This is a quote.';
+function displayContent(str) {
+    if (str === 'container') {
     }
 }
-container.innerHTML = 'quote-container';
-
-function displayContent(type) {
-    var container = document.getElementById('document.container');
-    var content;
-    if (type === 'joke') {
-        content = 'This is a joke.';
-    } 
-}
-
-container.innerHTML = 'joke-container';
+container.innerHTML = 'text-container';
 
 
 function updateBattery(time, totalTime) {
