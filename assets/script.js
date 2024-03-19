@@ -1,5 +1,5 @@
-const timerButton = document.querySelector('#timer-button');
-const batteryBar = document.querySelector('#battery-bar');
+const timerButton = document.querySelector("#timer-button");
+const batteryBar = document.querySelector("#battery-bar");
 
 function storeDataInLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
@@ -13,7 +13,7 @@ function startTimer(seconds) {
 
     if (timer === 0) {
       clearInterval(interval);
-      console.log('Countdown complete!');
+      console.log("Countdown complete!");
     } else {
       updateBattery(timer, 30);
       timer--;
@@ -27,11 +27,27 @@ function updateBattery(time, totalTime) {
   batteryBar.style.width = `${percentage}%`;
 }
 
-function handleClick() {
-  console.log('test click');
+function fetchData(url) {
+  fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response error");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error("There was a problem the fetch:", error);
+    });
 }
 
-timerButton.addEventListener('click', handleClick);
+function handleClick() {
+  console.log("test click");
+}
+
+timerButton.addEventListener("click", handleClick);
 
 function init() {
   startTimer(30);
