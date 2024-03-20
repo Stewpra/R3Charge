@@ -1,3 +1,5 @@
+const displayText = document.querySelector('#displayTime');
+
 function getTimeUnits(time) {
 	function getHours(totalSeconds) {
 		let hours = Math.floor(totalSeconds / 3600);
@@ -28,6 +30,18 @@ function getTimeUnits(time) {
 	const totalSeconds = remainingFromMinutes;
 	return { totalHours, totalMinutes, totalSeconds };
 }
+
+function updateTime(totalHours, totalMinutes, totalSeconds){
+    if(totalHours !== 0){
+      displayText.textContent = `${totalHours} hour`;
+    } else if (totalMinutes !== 0){
+      displayText.textContent = `${totalMinutes} minutes`;
+    }else {
+      displayText.textContent = `${totalSeconds} seconds`;
+    }
+}
+
+updateTime(0, 55, 0);
 
 function updateBattery(time, totalTime) {
 	const percentage = (time / totalTime) * 100;
