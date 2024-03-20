@@ -23,3 +23,20 @@ async function displayText(type) {
   }
   console.log(`invalid parameter: ${type}`);
 }
+
+function displayModal(text) {
+  const modal = document.getElementById('my_modal_1');
+  const modalContent = modal.querySelector('.modal-box');
+
+  modalContent.innerHTML = `
+    <h3 class="font-bold text-lg">Hello</h3>
+    <p class="py-4">${text}</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Snooze!</button>
+      </form>
+    </div>
+  `;
+
+  modal.showModal();
+}
