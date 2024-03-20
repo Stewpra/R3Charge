@@ -52,12 +52,12 @@
     <div
       class="h-screen flex justify-center items-center bg-gradient-to-br from-indigo-500 via-sky-500 to-emerald-500">
       <div class="flex flex-col gap-4">
-        <div id="battery-display" class="flex flex-row items-center gap-4">
+        <div id="battery-display" class="flex flex-row items-center gap-4" style="margin-left: 120px;">
           <div
-            class="relative flex items-center w-[400px] h-[200px] border-8 border-white rounded-[50px] p-4">
+            class="relative flex items-center w-[260px] h-[100px] border-4 border-white rounded-[20px] p-2">
             <div
               id="battery-bar"
-              class="h-full bg-white rounded-[25px] flex justify-center items-center"></div>
+              class="h-[30px] bg-white rounded-[10px] flex justify-center items-center"></div>
             <h2
               id="displayTime"
               class="absolute w-full text-center top-1/2 left-0 -translate-y-1/2 text-6xl font-bold">
@@ -67,7 +67,7 @@
           <div class="h-[40px] w-[10px] rounded-r-full bg-white"></div>
         </div>
         <h3 id="text-display"></h3>
-        <button id="timer-button" class="btn">Button</button>
+        <button id="timer-button" class="btn p-1 text-xs">Button</button>
         <button id="recharge-button" class="btn hidden">Recharge</button>
       </div>
     </div>
