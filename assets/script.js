@@ -69,6 +69,8 @@ function handleEndDay(interval) {
   localStorage.removeItem('startTime');
   clearInterval(interval);
   updateBattery(1, 1);
+  timerButton.style.display = 'block';
+  displayTextEl.textContent = '100%';
 }
 
 function init() {
