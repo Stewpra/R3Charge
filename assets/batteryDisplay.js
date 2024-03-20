@@ -33,14 +33,15 @@ function getTimeUnits(time) {
 
 function updateTime(totalHours, totalMinutes, totalSeconds){
     if(totalHours !== 0){
-      displayText.textContent = totalHours;
+      displayText.textContent = `${totalHours} hour`;
     } else if (totalMinutes !== 0){
-      displayText.textContent = totalMinutes;
+      displayText.textContent = `${totalMinutes} minutes`;
     }else {
-      displayText.textContent = totalSeconds;
+      displayText.textContent = `${totalSeconds} seconds`;
     }
 }
 
+updateTime(0, 55, 0);
 
 function updateBattery(time, totalTime) {
   const percentage = (time / totalTime) * 100;
