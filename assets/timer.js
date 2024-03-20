@@ -11,6 +11,7 @@ async function startTimer(seconds) {
       const text = await getQuote();
       displayModal(text);
     } else {
+      updateRemainingTimeDisplay(getTimeUnits(timer));
       updateBattery(timer, 30);
       timer--;
     }
