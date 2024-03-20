@@ -1,4 +1,5 @@
 const timerButton = document.querySelector('#timer-button');
+const textDisplay = document.querySelector('#text-display');
 const batteryDisplay = document.querySelector('#battery-display');
 const batteryBar = document.querySelector('#battery-bar');
 

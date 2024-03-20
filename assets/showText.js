@@ -11,3 +11,7 @@ async function getQuote() {
   console.log(data);
   return data;
 }
+
+function displayText(str) {
+  textDisplay.innerText = str;
+}
