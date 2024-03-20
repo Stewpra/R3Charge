@@ -10,6 +10,7 @@ function startTimer(seconds) {
       clearInterval(interval);
       endWorkTime();
     } else {
+      updateRemainingTimeDisplay(getTimeUnits(timer));
       updateBattery(timer, 30);
       timer--;
     }
