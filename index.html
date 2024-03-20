@@ -66,10 +66,11 @@
             class="relative flex items-center w-[260px] h-[150px] md:w-[400px] md:h-[200px] border-8 border-white rounded-[50px] p-4">
             <div
               id="battery-bar"
-              class="h-100 bg-white rounded-[25px] flex justify-center items-center"></div>
-            <h2 id = "displayTime"
-            class="absolute w-full text-center top-1/2 left-0 -translate-y-1/2 text-4xl md:text-6xl font-bold">50 min</h2>
-  
+              class="h-full bg-white rounded-[25px] flex justify-center items-center"></div>
+            <h2
+              id="displayTime"
+              class="absolute w-full text-center top-1/2 left-0 -translate-y-1/2 text-6xl font-bold">
+              50 min
             </h2>
           </div>
           <div class="h-[60px] w-[20px] rounded-r-full bg-white"></div>
@@ -80,12 +81,37 @@
           class="btn">
           Button
         </button>
+        <button
+          id="recharge-button"
+          class="btn">
+          Recharge
+        </button>
       </div>
     </div>
-    <script src="assets/script.js"></script>
+    <div>
+      <button
+        class="btn"
+        onclick="my_modal_1.showModal()">
+        Modal Placeholder
+      </button>
+      <dialog
+        id="my_modal_1"
+        class="modal">
+        <div class="modal-box">
+          <h3 class="font-bold text-lg">Hello!</h3>
+          <p class="py-4">Time to Break!</p>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn">Snooze!</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="assets/timer.js"></script>
     <script src="assets/batteryDisplay.js"></script>
     <script src="assets/showText.js"></script>
+    <script src="assets/script.js"></script>
   </body>
 </html>
