@@ -32,12 +32,12 @@ function getTimeUnits(time) {
 }
 
 function updateTime(totalHours, totalMinutes, totalSeconds){
-    if(totalHours === 0){
-      return totalMinutes;
+    if(totalHours !== 0){
+      displayText.textContent = totalHours;
     } else if (totalMinutes === 0){
-      return totalSeconds;
+      displayText.textContent = totalMinutes;
     }else {
-      
+      displayText.textContent = totalSeconds;
     }
 }
 
