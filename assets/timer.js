@@ -5,15 +5,19 @@ function getCurrentTime() {
 function startTimer(seconds) {
   let timer = seconds;
 
-  const interval = setInterval(() => {
+  const interval = setInterval(async () => {
     if (timer === 0) {
       clearInterval(interval);
+      const text = await getQuote();
+      displayModal(text);
       endWorkTime();
     } else {
+      updateRemainingTimeDisplay(getTimeUnits(timer));
       updateBattery(timer, 30);
       timer--;
     }
   }, 1000);
+  endDayButton.addEventListener('click', () => handleEndDay(interval));
 }
 
 async function startRecharge(seconds) {
@@ -22,11 +26,13 @@ async function startRecharge(seconds) {
     if (timer === seconds) {
       clearInterval(interval);
       console.log('Recharge Complete!');
-      const jokeText = await getJoke();
-      displayModal(jokeText);
+      const text = await getJoke();
+      displayModal(text);
+      endRechargeTime();
     } else {
       updateBattery(timer, 30);
       timer++;
     }
   }, 1000);
+  endDayButton.addEventListener('click', () => handleEndDay(interval));
 }

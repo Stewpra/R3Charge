@@ -13,17 +13,14 @@ function getTimeUnits(totalSeconds) {
 
   const minutes = getMinutes(totalSeconds);
   const seconds = moduloFromMinutes(totalSeconds);
-  console.log(minutes, seconds);
   return { minutes, seconds };
 }
 
-function updateTime(totalHours, totalMinutes, totalSeconds) {
-  if (totalHours !== 0) {
-    displayTextEl.textContent = `${totalHours} hours`;
-  } else if (totalMinutes !== 0) {
-    displayTextEl.textContent = `${totalMinutes} minutes`;
+function updateRemainingTimeDisplay({ minutes, seconds }) {
+  if (minutes !== 0) {
+    displayTextEl.textContent = `${minutes} Min`;
   } else {
-    displayTextEl.textContent = `${totalSeconds} seconds`;
+    displayTextEl.textContent = `${seconds} Sec`;
   }
 }
 
