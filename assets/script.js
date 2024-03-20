@@ -21,19 +21,26 @@ async function fetchData(url) {
 }
 
 function handleClick1() {
-  timerButton.setAttribute('disabled', 'disabled');
+  timerButton.style.display = 'none';
+  rechargeButton.style.display = 'none';
   storeDataInLocalStorage('startTime', getCurrentTime());
   startTimer(30);
 }
 
 function handleClick2() {
-  rechargeButton.setAttribute('disabled', 'disabled');
+  timerButton.style.display = 'none';
+  rechargeButton.style.display = 'none';
   startRecharge(30);
 }
 
 function endWorkTime() {
-  // hideBatteryDisplay();
-  // displayText('quote');
+  timerButton.style.display = 'none';
+  rechargeButton.style.display = 'block';
+}
+
+function endRechargeTime() {
+  timerButton.style.display = 'block';
+  rechargeButton.style.display = 'none';
 }
 
 function storeDataInLocalStorage(key, data) {
