@@ -1,20 +1,20 @@
 const displayText = document.querySelector('#displayTime');
 
 function getTimeUnits(totalSeconds) {
-  function getMinutes(seconds) {
-    let minutes = Math.floor(totalSeconds / 60);
+  function getMinutes(time) {
+    let minutes = Math.floor(time / 60);
     return minutes;
   }
 
-  function moduloFromMinutes(seconds) {
-    let modulo = totalSeconds % 60;
+  function moduloFromMinutes(time) {
+    let modulo = time % 60;
     return modulo;
   }
 
-  const totalMinutes = getMinutes(totalSeconds);
-  const totalSeconds = moduloFromMinutes(totalSeconds);
-
-  return { totalMinutes, totalSeconds };
+  const minutes = getMinutes(totalSeconds);
+  const seconds = moduloFromMinutes(totalSeconds);
+  console.log(minutes, seconds);
+  return { minutes, seconds };
 }
 
 function updateTime(totalHours, totalMinutes, totalSeconds) {
