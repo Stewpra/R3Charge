@@ -27,7 +27,7 @@ function startTimer(seconds) {
 }
 
 function startRecharge(seconds) {
-	let timer = 0;
+	let timer = 1;
 
 	const interval = setInterval(() => {
 		if (timer === seconds) {
