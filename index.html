@@ -1,89 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="assets/style.css" />
-    <title>R3Charge</title>
-    <link
-      rel="shortcut icon"
-      href="./assets/images/favicon.png"
-      type="image/x-icon" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <header class="absolute top-8 left-8 right-8">
-      <div
-        class="navbar bg-base-100 rounded-full flex flex-row justify-between pr-6 glass">
-        <div class="flex flex-row gap-2">
-          <a class="btn btn-ghost rounded-full h-auto p-4 text-2xl font-bold"
-            ><img src="assets\images\favicon.png" />R3Charge</a
-          >
-        </div>
-        <div
-          class="tooltip tooltip-bottom"
-          data-tip="End Day">
-          <button
-            class="btn btn-circle btn-lg bg-red-500 hover:bg-red-400 border-none text-white">
-            <svg
-              class="h-8 w-8"
-              xmlns="http://www.w3.org/2000/svg"
-              width="48"
-              height="48"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-bed">
-              <path d="M2 4v16" />
-              <path d="M2 8h18a2 2 0 0 1 2 2v10" />
-              <path d="M2 17h20" />
-              <path d="M6 8v9" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
-    <div
-      class="h-screen flex justify-center items-center bg-gradient-to-br from-indigo-500 via-sky-500 to-emerald-500">
-      <div class="flex flex-col gap-4">
-        <div
-          id="battery-display"
-          class="flex flex-row items-center gap-4">
-          <div
-            class="relative flex items-center w-[400px] h-[200px] border-8 border-white rounded-[50px] p-4">
-            <div
-              id="battery-bar"
-              class="h-full bg-white rounded-[25px] flex justify-center items-center"></div>
-            <h2 id = "displayTime"
-              class="absolute w-full text-center top-1/2 left-0 -translate-y-1/2 text-6xl font-bold">
-              50 min
-            </h2>
-          </div>
-          <div class="h-[60px] w-[20px] rounded-r-full bg-white"></div>
-        </div>
-        <h3 id="text-display"></h3>
-        <button
-          id="timer-button"
-          class="btn">
-          Button
-        </button>
-      </div>
-    </div>
-    <script src="assets/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <script src="assets/timer.js"></script>
-    <script src="assets/batteryDisplay.js"></script>
-    <script src="assets/showText.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="assets/style.css" />
+		<title>R3Charge</title>
+		<link
+			rel="shortcut icon"
+			href="./assets/images/favicon.png"
+			type="image/x-icon" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css"
+			rel="stylesheet"
+			type="text/css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body>
+		<header class="absolute top-8 left-8 right-8">
+			<div
+				class="navbar bg-base-100 rounded-full flex flex-row justify-between pr-6 glass">
+				<div class="flex flex-row gap-2">
+					<a class="btn btn-ghost rounded-full h-auto p-4 text-2xl font-bold"
+						><img src="assets\images\favicon.png" />R3Charge</a
+					>
+				</div>
+				<div class="tooltip tooltip-bottom" data-tip="End Day">
+					<button
+						class="btn btn-circle btn-lg bg-red-500 hover:bg-red-400 border-none text-white">
+						<svg
+							class="h-8 w-8"
+							xmlns="http://www.w3.org/2000/svg"
+							width="48"
+							height="48"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-bed">
+							<path d="M2 4v16" />
+							<path d="M2 8h18a2 2 0 0 1 2 2v10" />
+							<path d="M2 17h20" />
+							<path d="M6 8v9" />
+						</svg>
+					</button>
+				</div>
+			</div>
+		</header>
+		<div
+			class="h-screen flex justify-center items-center bg-gradient-to-br from-indigo-500 via-sky-500 to-emerald-500">
+			<div class="flex flex-col gap-4">
+				<div id="battery-display" class="flex flex-row items-center gap-4">
+					<div
+						class="relative flex items-center w-[400px] h-[200px] border-8 border-white rounded-[50px] p-4">
+						<div
+							id="battery-bar"
+							class="h-full bg-white rounded-[25px] flex justify-center items-center"></div>
+						<h2
+							id="displayTime"
+							class="absolute w-full text-center top-1/2 left-0 -translate-y-1/2 text-6xl font-bold">
+							50 min
+						</h2>
+					</div>
+					<div class="h-[60px] w-[20px] rounded-r-full bg-white"></div>
+				</div>
+				<h3 id="text-display"></h3>
+				<button id="timer-button" class="btn">Button</button>
+				<button id="recharge-button" class="btn">Recharge</button>
+			</div>
+		</div>
+		<script src="assets/script.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+		<script src="assets/timer.js"></script>
+		<script src="assets/batteryDisplay.js"></script>
+		<script src="assets/showText.js"></script>
+	</body>
 </html>
