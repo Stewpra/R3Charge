@@ -34,7 +34,7 @@ function getTimeUnits(time) {
 function updateTime(totalHours, totalMinutes, totalSeconds){
     if(totalHours !== 0){
       displayText.textContent = totalHours;
-    } else if (totalMinutes === 0){
+    } else if (totalMinutes !== 0){
       displayText.textContent = totalMinutes;
     }else {
       displayText.textContent = totalSeconds;
