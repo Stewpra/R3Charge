@@ -3,6 +3,7 @@ const textDisplay = document.querySelector('#text-display');
 const batteryDisplay = document.querySelector('#battery-display');
 const batteryBar = document.querySelector('#battery-bar');
 const rechargeButton = document.querySelector('#recharge-button');
+const endDayButton = document.querySelector('#end-day-button');
 
 async function fetchData(url) {
   let data;
@@ -57,10 +58,14 @@ function initTimer(totalTime) {
   startTimer(timeLeft);
 }
 
+function handleEndDay(interval) {
+  localStorage.removeItem('startTime');
+  clearInterval(interval);
+}
+
 function init() {
   timerButton.addEventListener('click', handleClick1);
   rechargeButton.addEventListener('click', handleClick2);
-
   initTimer(30);
 }
 

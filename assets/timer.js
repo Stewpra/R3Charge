@@ -2,7 +2,7 @@ function getCurrentTime() {
   return dayjs().unix();
 }
 
-async function startTimer(seconds) {
+function startTimer(seconds) {
   let timer = seconds;
 
   const interval = setInterval(async () => {
@@ -16,6 +16,7 @@ async function startTimer(seconds) {
       timer--;
     }
   }, 1000);
+  endDayButton.addEventListener('click', () => handleEndDay(interval));
 }
 
 async function startRecharge(seconds) {
@@ -31,4 +32,5 @@ async function startRecharge(seconds) {
       timer++;
     }
   }, 1000);
+  endDayButton.addEventListener('click', () => handleEndDay(interval));
 }
