@@ -24,6 +24,11 @@ function handleClick() {
   startTimer(30);
 }
 
+function endWorkTime() {
+  hideBatteryDisplay();
+  displayText('quote');
+}
+
 function init() {
   timerButton.addEventListener('click', handleClick);
 }

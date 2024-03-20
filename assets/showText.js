@@ -23,5 +23,3 @@ async function displayText(type) {
   }
   console.log(`invalid parameter: ${type}`);
 }
-
-displayText('joke');
