@@ -16,13 +16,14 @@ function startTimer(seconds) {
   }, 1000);
 }
 
-function startRecharge(seconds) {
+async function startRecharge(seconds) {
   let timer = 1;
-
-  const interval = setInterval(() => {
+  const interval = setInterval(async () => {
     if (timer === seconds) {
       clearInterval(interval);
       console.log('Recharge Complete!');
+      const jokeText = await getJoke();
+      displayModal(jokeText);
     } else {
       updateBattery(timer, 30);
       timer++;
