@@ -41,3 +41,7 @@ function updateBattery(time, totalTime) {
     batteryBar.style.height = height;
   }
 }
+
+function hideBatteryDisplay() {
+  batteryDisplay.style.display = 'none';
+}
