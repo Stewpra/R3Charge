@@ -33,11 +33,11 @@ function getTimeUnits(time) {
 
 function updateTime(totalHours, totalMinutes, totalSeconds) {
   if (totalHours !== 0) {
-    displayText.textContent = `${totalHours} hours`;
+    displayTextEl.textContent = `${totalHours} hours`;
   } else if (totalMinutes !== 0) {
-    displayText.textContent = `${totalMinutes} minutes`;
+    displayTextEl.textContent = `${totalMinutes} minutes`;
   } else {
-    displayText.textContent = `${totalSeconds} seconds`;
+    displayTextEl.textContent = `${totalSeconds} seconds`;
   }
 }
 
