@@ -2,13 +2,14 @@ function getCurrentTime() {
   return dayjs().unix();
 }
 
-function startTimer(seconds) {
+async function startTimer(seconds) {
   let timer = seconds;
 
-  const interval = setInterval(() => {
+  const interval = setInterval(async () => {
     if (timer === 0) {
       clearInterval(interval);
-      endWorkTime();
+      const text = await getQuote();
+      displayModal(text);
     } else {
       updateRemainingTimeDisplay(getTimeUnits(timer));
       updateBattery(timer, 30);
@@ -23,8 +24,8 @@ async function startRecharge(seconds) {
     if (timer === seconds) {
       clearInterval(interval);
       console.log('Recharge Complete!');
-      const jokeText = await getJoke();
-      displayModal(jokeText);
+      const text = await getJoke();
+      displayModal(text);
     } else {
       updateBattery(timer, 30);
       timer++;
