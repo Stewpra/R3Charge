@@ -1,3 +1,6 @@
+const modal = document.getElementById('text-modal');
+const modalTitle = document.querySelector('#modal-title');
+const modalText = document.querySelector('#modal-text');
 async function getJoke() {
   const jokeUrl = 'https://icanhazdadjoke.com/';
   const data = await fetchData(jokeUrl);
@@ -25,18 +28,8 @@ async function displayText(type) {
 }
 
 function displayModal(title, text) {
-  const modal = document.getElementById('my_modal_1');
-  const modalContent = modal.querySelector('.modal-box');
-
-  modalContent.innerHTML = `
-    <h3 class="text-center font-semibold">${title}</h3>
-    <p class="py-4 text-center text-4xl font-bold">${text}</p>
-    <div class="modal-action">
-      <form method="dialog">
-        <button class="btn">Snooze!</button>
-      </form>
-    </div>
-  `;
+  modalTitle.innerText = title;
+  modalText.innerText = text;
 
   modal.showModal();
 }
