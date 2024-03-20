@@ -14,8 +14,6 @@ function startTimer(seconds) {
       timer--;
     }
   }, 1000);
-
-  storeDataInLocalStorage('startTime', getCurrentTime());
 }
 
 function startRecharge(seconds) {

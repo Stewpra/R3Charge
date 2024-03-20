@@ -22,6 +22,7 @@ async function fetchData(url) {
 
 function handleClick1() {
   timerButton.setAttribute('disabled', 'disabled');
+  storeDataInLocalStorage('startTime', getCurrentTime());
   startTimer(30);
 }
 
@@ -47,6 +48,7 @@ function initTimer(totalTime) {
   const startTime = dayjs.unix(getDataFromLocalStorage('startTime'));
   const timeDiff = dayjs().diff(startTime, 'seconds');
   const timeLeft = totalTime - timeDiff;
+  console.log(timeDiff);
   if (timeLeft <= 0) {
     // probably show some modal here if this is true
     console.log('you have gone past the end time while you were away ');
