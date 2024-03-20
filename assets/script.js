@@ -61,6 +61,7 @@ function initTimer(totalTime) {
 function handleEndDay(interval) {
   localStorage.removeItem('startTime');
   clearInterval(interval);
+  updateBattery(1, 1);
 }
 
 function init() {
