@@ -31,8 +31,8 @@ function getTimeUnits(time) {
   return { totalHours, totalMinutes, totalSeconds };
 }
 
-function updateTime(){
-  
+function updateTime(totalHours, totalMinutes, totalSeconds){
+
 }
 
 
