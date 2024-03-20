@@ -1,4 +1,5 @@
 const timerButton = document.querySelector('#timer-button');
+const batteryDisplay = document.querySelector('#battery-display');
 const batteryBar = document.querySelector('#battery-bar');
 
 async function fetchData(url) {
