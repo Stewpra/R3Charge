@@ -1,4 +1,6 @@
 const timerButton = document.querySelector('#timer-button');
+const textDisplay = document.querySelector('#text-display');
+const batteryDisplay = document.querySelector('#battery-display');
 const batteryBar = document.querySelector('#battery-bar');
 
 async function fetchData(url) {
@@ -20,6 +22,11 @@ async function fetchData(url) {
 function handleClick() {
   timerButton.setAttribute('disabled', 'disabled');
   startTimer(30);
+}
+
+function endWorkTime() {
+  hideBatteryDisplay();
+  displayText('quote');
 }
 
 function init() {

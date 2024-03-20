@@ -16,7 +16,7 @@ function startTimer(seconds) {
   const interval = setInterval(() => {
     if (timer === 0) {
       clearInterval(interval);
-      console.log('Countdown complete!');
+      endWorkTime();
     } else {
       updateBattery(timer, 30);
       timer--;
