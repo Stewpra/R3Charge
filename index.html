@@ -2,8 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/style.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="assets/style.css" />
     <title>R3Charge</title>
     <link
       rel="shortcut icon"
@@ -24,7 +28,9 @@
             ><img src="assets\images\favicon.png" />R3Charge</a
           >
         </div>
-        <div class="tooltip tooltip-bottom" data-tip="End Day">
+        <div
+          class="tooltip tooltip-bottom"
+          data-tip="End Day">
           <button
             id="end-day-button"
             class="btn btn-circle btn-lg bg-red-500 hover:bg-red-400 border-none text-white">
@@ -52,7 +58,9 @@
     <div
       class="h-screen flex justify-center items-center bg-gradient-to-br from-indigo-500 via-sky-500 to-emerald-500">
       <div class="flex flex-col gap-4">
-        <div id="battery-display" class="flex flex-row items-center gap-4">
+        <div
+          id="battery-display"
+          class="flex flex-row items-center gap-4">
           <div
             class="relative flex items-center w-[400px] h-[200px] border-8 border-white rounded-[50px] p-4">
             <div
@@ -67,21 +75,41 @@
           <div class="h-[60px] w-[20px] rounded-r-full bg-white"></div>
         </div>
         <h3 id="text-display"></h3>
-        <button id="timer-button" class="btn">Button</button>
-        <button id="recharge-button" class="btn hidden">Recharge</button>
+        <button
+          id="timer-button"
+          class="btn">
+          Button
+        </button>
+        <button
+          id="recharge-button"
+          class="btn">
+          Recharge
+        </button>
       </div>
     </div>
     <div>
-      <button class="btn" onclick="my_modal_1.showModal()">
+      <button
+        class="btn"
+        onclick="my_modal_1.showModal()">
         Modal Placeholder
       </button>
-      <dialog id="my_modal_1" class="modal">
-        <div class="modal-box glass">
-          <h3 class="font-bold text-center text-4xl">Hello!</h3>
-          <p class="py-4 text-center">Time to Break!</p>
+      <dialog
+        id="text-modal"
+        class="modal">
+        <div class="modal-box">
+          <h3
+            id="modal-title"
+            class="text-center text-xl font-semibold">
+            Here's a quote to start your break.
+          </h3>
+          <p
+            id="modal-text"
+            class="py-4 text-center text-5xl font-bold bg-gradient-to-br from-rose-500 to-violet-400 text-transparent bg-clip-text">
+            you have gone past the end time while you were away
+          </p>
           <div class="modal-action">
             <form method="dialog">
-              <button class="btn btn-neutral">Snooze!</button>
+              <button class="btn">Snooze!</button>
             </form>
           </div>
         </div>

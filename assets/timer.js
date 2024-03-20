@@ -9,7 +9,7 @@ function startTimer(seconds) {
     if (timer === 0) {
       clearInterval(interval);
       const text = await getQuote();
-      displayModal(text);
+      displayModal("Here's a quote to start your break.", text);
       endWorkTime();
     } else {
       updateRemainingTimeDisplay(getTimeUnits(timer));
@@ -27,7 +27,7 @@ async function startRecharge(seconds) {
       clearInterval(interval);
       console.log('Recharge Complete!');
       const text = await getJoke();
-      displayModal(text);
+      displayModal("Here's a joke to get you pumped up to work!", text);
       endRechargeTime();
     } else {
       updateBattery(timer, 30);
