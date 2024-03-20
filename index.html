@@ -57,23 +57,13 @@
     <div
       class="h-screen flex justify-center items-center bg-gradient-to-br from-indigo-500 via-sky-500 to-emerald-500">
       <div class="flex flex-col gap-4">
-        <div
-          id="battery-display"
-          class="flex flex-row items-center gap-4">
-          <!-- class="relative flex items-center justify-center w-3 h-3 border-1 border-white rounded-full p-0.5" -->
-          <div class="relative≈"></div>
-          <div
-            class="relative flex items-center w-[260px] h-[150px] md:w-[400px] md:h-[200px] border-8 border-white rounded-[50px] p-4">
-            <div
-              id="battery-bar"
-              class="h-full bg-white rounded-[25px] flex justify-center items-center"></div>
-            <h2
-              id="displayTime"
-              class="absolute w-full text-center top-1/2 left-0 -translate-y-1/2 text-6xl font-bold">
-              50 min
-            </h2>
+        <div id="battery-display" class="flex flex-row items-center gap-2">
+          <div class="relative"></div>
+          <div class="relative flex items-center w-[200px] h-[100px] md:w-[260px] md:h-[150px] border-4 border-white rounded-[25px] p-2">
+            <div id="battery-bar" class="h-2 w-2 bg-white rounded-full flex justify-center items-center"></div>
+            <h2 id="displayTime" class="absolute w-full text-center top-1/2 left-0 -translate-y-1/2 text-3xl md:text-6xl font-bold">50 min</h2>
           </div>
-          <div class="h-[60px] w-[20px] rounded-r-full bg-white"></div>
+          <div class="h-[40px] w-[10px] rounded-r-full bg-white"></div>
         </div>
         <h3 id="text-display"></h3>
         <button
