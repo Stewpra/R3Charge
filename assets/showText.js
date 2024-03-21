@@ -1,6 +1,8 @@
 const modal = document.querySelector('#model');
 const modalTitle = document.querySelector('#modal-title');
 const modalText = document.querySelector('#modal-text');
+
+//api needed to receive random dad joke
 async function getJoke() {
   const jokeUrl = 'https://icanhazdadjoke.com/';
   const data = await fetchData(jokeUrl);
