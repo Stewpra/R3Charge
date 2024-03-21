@@ -4,6 +4,7 @@ const batteryDisplay = document.querySelector('#battery-display');
 const batteryBar = document.querySelector('#battery-bar');
 const rechargeButton = document.querySelector('#recharge-button');
 const endDayButton = document.querySelector('#end-day-button');
+const dismissButton = document.getElementById('dismiss-button');
 
 async function fetchData(url) {
   let data;
@@ -65,6 +66,16 @@ function initTimer(totalTime) {
   startTimer(timeLeft);
 }
 
+function showToast() {
+  const toast = document.getElementById('dismiss-toast');
+  toast.style.display = 'block';
+}
+
+function dismissToast() {
+  const toast = document.getElementById('dismiss-toast');
+  toast.style.display = 'none';
+}
+
 function handleEndDay(interval) {
   localStorage.removeItem('startTime');
   clearInterval(interval);
@@ -78,5 +89,7 @@ function init() {
   rechargeButton.addEventListener('click', handleStartRecharge);
   initTimer(30);
 }
+
+dismissButton.addEventListener('click', dismissToast);
 
 init();
