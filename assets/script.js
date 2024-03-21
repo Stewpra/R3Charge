@@ -21,14 +21,14 @@ async function fetchData(url) {
   }
 }
 
-function handleClick1() {
+function handleStartTimer() {
   timerButton.style.display = 'none';
   rechargeButton.style.display = 'none';
   storeDataInLocalStorage('startTime', getCurrentTime());
   startTimer(30);
 }
 
-function handleClick2() {
+function handleStartRecharge() {
   timerButton.style.display = 'none';
   rechargeButton.style.display = 'none';
   startRecharge(30);
@@ -74,8 +74,8 @@ function handleEndDay(interval) {
 }
 
 function init() {
-  timerButton.addEventListener('click', handleClick1);
-  rechargeButton.addEventListener('click', handleClick2);
+  timerButton.addEventListener('click', handleStartTimer);
+  rechargeButton.addEventListener('click', handleStartRecharge);
   initTimer(30);
 }
 
