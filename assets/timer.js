@@ -9,7 +9,7 @@ function startTimer(seconds) {
     if (timer === 0) {
       clearInterval(interval);
       const text = await getQuote();
-      displayModal("Here's a quote to start your break.", text);
+      displayModal("Here's a quote to start your break:", text);
       endWorkTime();
     } else {
       updateRemainingTimeDisplay(getTimeUnits(timer));
