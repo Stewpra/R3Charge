@@ -5,8 +5,8 @@ const batteryBar = document.querySelector('#battery-bar');
 const rechargeButton = document.querySelector('#recharge-button');
 const endDayButton = document.querySelector('#end-day-button');
 const dismissButton = document.getElementById('dismiss-button');
-const revealButton = document.getElementById('#show-timer')
-
+const revealButton = document.getElementById('show-button');
+console.log(revealButton);
 async function fetchData(url) {
   let data;
   try {
@@ -26,7 +26,6 @@ async function fetchData(url) {
 function handleStartTimer() {
   timerButton.style.display = 'none';
   rechargeButton.style.display = 'none';
-  revealButton.style.display = 'block';
   storeDataInLocalStorage('startTime', getCurrentTime());
   startTimer(30);
 }
@@ -34,20 +33,26 @@ function handleStartTimer() {
 function handleStartRecharge() {
   timerButton.style.display = 'none';
   rechargeButton.style.display = 'none';
-  revealButton.style.display = 'block';
   startRecharge(30);
+}
+function handleTimeToggle() {
+  console.log(displayTextEl);
+  
+  if (displayTextEl.style.display === 'none') {
+    displayTextEl.style.display = 'block';
+  } else {
+    displayTextEl.style.display = 'none';
+  }
 }
 
 function endWorkTime() {
   timerButton.style.display = 'none';
   rechargeButton.style.display = 'block';
-  revealButton.style.display = 'none';
 }
 
 function endRechargeTime() {
   timerButton.style.display = 'block';
   rechargeButton.style.display = 'none';
-  revealButton.style.display = 'none';
 }
 
 function storeDataInLocalStorage(key, data) {
@@ -92,7 +97,7 @@ function handleEndDay(interval) {
 function init() {
   timerButton.addEventListener('click', handleStartTimer);
   rechargeButton.addEventListener('click', handleStartRecharge);
-  revealButton.addEventListener('click',)
+  revealButton.addEventListener('click', handleTimeToggle);
 
   initTimer(30);
 }
