@@ -27,7 +27,7 @@ async function startRecharge(seconds) {
       clearInterval(interval);
       console.log('Recharge Complete!');
       const text = await getJoke();
-      displayModal("Here's a joke to get you pumped up to work!", text);
+      displayModal("Here's a joke to get you pumped up to work:", text);
       endRechargeTime();
     } else {
       updateBattery(timer, 30);
