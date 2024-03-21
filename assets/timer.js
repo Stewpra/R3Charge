@@ -33,6 +33,7 @@ async function startRecharge(seconds) {
       updateRemainingTimeDisplay(getTimeUnits(timer));
       updateBattery(timer, 30);
       timer++;
+
     }
   }, 1000);
   endDayButton.addEventListener('click', () => handleEndDay(interval));
