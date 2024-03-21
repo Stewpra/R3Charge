@@ -31,13 +31,9 @@ function updateBattery(time, totalTime) {
     batteryBar.style.height = '100%';
   }
   if (percentage < 10) {
-    height = 15 * percentage;
-    batteryBar.style.height = `${height}px`;
+    batteryBar.style.height = `${90}%`;
   }
-  if (percentage < 8) {
-    height = '105px';
-    batteryBar.style.height = height;
-  }
+
 }
 
 function hideBatteryDisplay() {
