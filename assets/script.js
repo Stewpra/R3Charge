@@ -35,6 +35,7 @@ function handleStartRecharge() {
   rechargeButton.style.display = 'none';
   startRecharge(30);
 }
+//This uses an if statement to toggle the viewing of the timer by using displayTextEl from batteryDisplay.js
 function handleTimeToggle() {
   console.log(displayTextEl);
   
