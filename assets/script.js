@@ -70,7 +70,7 @@ function initTimer(totalTime) {
   const timeLeft = totalTime - timeDiff;
   console.log(timeDiff);
   if (timeLeft <= 0) {
-    // probably show some modal here if this is true
+    // probably show some modal here if this is true. possibly using toast
     console.log('you have gone past the end time while you were away ');
     return;
   }
