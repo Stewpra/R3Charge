@@ -34,6 +34,7 @@ function handleStartTimer() {
 function handleStartRecharge() {
   timerButton.style.display = 'none';
   rechargeButton.style.display = 'none';
+  revealButton.style.display = 'block';
   startRecharge(30);
 }
 
