@@ -30,6 +30,7 @@ async function startRecharge(seconds) {
       displayModal("Here's a joke to get you pumped up to work:", text);
       endRechargeTime();
     } else {
+      updateRemainingTimeDisplay(getTimeUnits(timer));
       updateBattery(timer, 30);
       timer++;
     }
