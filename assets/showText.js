@@ -1,4 +1,4 @@
-const modal = document.getElementById('text-modal');
+const modal = document.querySelector('#model');
 const modalTitle = document.querySelector('#modal-title');
 const modalText = document.querySelector('#modal-text');
 async function getJoke() {
@@ -26,7 +26,7 @@ async function displayText(type) {
   }
   console.log(`invalid parameter: ${type}`);
 }
-
+console.log(modal);
 function displayModal(title, text) {
   modalTitle.innerText = title;
   modalText.innerText = text;
