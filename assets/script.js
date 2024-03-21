@@ -41,6 +41,7 @@ function handleStartRecharge() {
 function endWorkTime() {
   timerButton.style.display = 'none';
   rechargeButton.style.display = 'block';
+  revealButton.style.display = 'none';
 }
 
 function endRechargeTime() {
