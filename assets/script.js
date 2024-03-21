@@ -92,6 +92,8 @@ function handleEndDay(interval) {
 function init() {
   timerButton.addEventListener('click', handleStartTimer);
   rechargeButton.addEventListener('click', handleStartRecharge);
+  revealButton.addEventListener('click',)
+
   initTimer(30);
 }
 
