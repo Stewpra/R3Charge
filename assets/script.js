@@ -26,6 +26,7 @@ async function fetchData(url) {
 function handleStartTimer() {
   timerButton.style.display = 'none';
   rechargeButton.style.display = 'none';
+  revealButton.style.display = 'block';
   storeDataInLocalStorage('startTime', getCurrentTime());
   startTimer(30);
 }
