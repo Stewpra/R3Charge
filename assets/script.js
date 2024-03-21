@@ -5,6 +5,7 @@ const batteryBar = document.querySelector('#battery-bar');
 const rechargeButton = document.querySelector('#recharge-button');
 const endDayButton = document.querySelector('#end-day-button');
 const dismissButton = document.getElementById('dismiss-button');
+const revealButton = document.getElementById('#show-timer')
 
 async function fetchData(url) {
   let data;
