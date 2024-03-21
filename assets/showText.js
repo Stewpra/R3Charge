@@ -7,7 +7,7 @@ async function getJoke() {
   const str = data.joke;
   return str;
 }
-
+//api needed to recieve random quote
 async function getQuote() {
   const quoteUrl = 'https://api.quotable.io/random';
   const data = await fetchData(quoteUrl);
