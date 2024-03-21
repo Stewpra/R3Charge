@@ -23,7 +23,7 @@ function updateRemainingTimeDisplay({ minutes, seconds }) {
     displayTextEl.textContent = `${seconds} Sec`;
   }
 }
-
+//this function allows battery to change visually with bar
 function updateBattery(time, totalTime) {
   const percentage = (time / totalTime) * 100;
   batteryBar.style.width = `${percentage}%`;
