@@ -3,6 +3,11 @@ function getCurrentTime() {
 }
 
 function startTimer(seconds) {
+  if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+    showToast();
+    timerButton.style.display = 'none';
+    rechargeButton.style.display = 'none';
+  }
   let timer = seconds;
 
   const interval = setInterval(async () => {
@@ -33,7 +38,6 @@ async function startRecharge(seconds) {
       updateRemainingTimeDisplay(getTimeUnits(timer));
       updateBattery(timer, 30);
       timer++;
-
     }
   }, 1000);
   endDayButton.addEventListener('click', () => handleEndDay(interval));
