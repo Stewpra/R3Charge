@@ -2,12 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="assets/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/style.css" />
     <title>R3Charge</title>
     <link
       rel="shortcut icon"
@@ -35,9 +31,7 @@
               alt="R3Charge logo" />R3Charge</a
           >
         </div>
-        <div
-          class="tooltip tooltip-bottom"
-          data-tip="End Day">
+        <div class="tooltip tooltip-bottom" data-tip="End Day">
           <button
             id="end-day-button"
             class="btn btn-circle btn-lg bg-red-500 hover:bg-red-400 border-none text-white">
@@ -94,13 +88,9 @@
       </div>
     </div>
     <div>
-      <dialog
-        id="model"
-        class="modal">
+      <dialog id="model" class="modal">
         <div class="modal-box">
-          <h3
-            id="modal-title"
-            class="font-semibold text-center text-xl">
+          <h3 id="modal-title" class="font-semibold text-center text-xl">
             Hello!
           </h3>
           <p
@@ -115,6 +105,44 @@
           </div>
         </div>
       </dialog>
+    </div>
+    <div class="absolute bottom-0 end-0">
+      <div
+        id="dismiss-toast"
+        class="mb-2 mr-2 max-w-xs bg-white border border-gray-200 rounded-xl shadow-lg dark:bg-gray-800 dark:border-gray-700"
+        role="alert"
+        style="display: none">
+        <div class="flex p-4">
+          <div class="flex-shrink-0">
+            <svg
+              class="flex-shrink-0 size-4 text-yellow-500 mt-0.5"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16">
+              <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+            </svg>
+          </div>
+          <div class="ms-3 flex justify-between w-full">
+            <p class="text-sm text-gray-700 dark:text-gray-400">
+              Please don't leave the page with an active timer!
+            </p>
+            <button
+              id="dismiss-button"
+              class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
+              <svg
+                class="h-4 w-4 fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24">
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="assets/timer.js"></script>
