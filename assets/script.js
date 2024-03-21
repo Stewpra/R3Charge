@@ -93,3 +93,5 @@ function init() {
 dismissButton.addEventListener('click', dismissToast);
 
 init();
+
+
