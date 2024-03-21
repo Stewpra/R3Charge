@@ -47,6 +47,7 @@ function endWorkTime() {
 function endRechargeTime() {
   timerButton.style.display = 'block';
   rechargeButton.style.display = 'none';
+  revealButton.style.display = 'none';
 }
 
 function storeDataInLocalStorage(key, data) {
