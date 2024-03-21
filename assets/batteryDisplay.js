@@ -10,7 +10,7 @@ function getTimeUnits(totalSeconds) {
     let modulo = time % 60;
     return modulo;
   }
-
+//By converting seconds from minutes, it allows the display to change based on how much time is left. Minutes and seconds were preferred.
   const minutes = getMinutes(totalSeconds);
   const seconds = moduloFromMinutes(totalSeconds);
   return { minutes, seconds };
