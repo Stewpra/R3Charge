@@ -5,7 +5,7 @@ function getTimeUnits(totalSeconds) {
     let minutes = Math.floor(time / 60);
     return minutes;
   }
-
+//modulo get the remainer of the math given to it
   function moduloFromMinutes(time) {
     let modulo = time % 60;
     return modulo;
