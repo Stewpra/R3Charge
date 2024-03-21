@@ -8,18 +8,22 @@
     <link
       rel="shortcut icon"
       href="./assets/images/favicon.png"
-      type="image/x-icon" />
+      type="image/x-icon"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css"
       rel="stylesheet"
-      type="text/css" />
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body
-    class="bg-gradient-to-br from-indigo-500 via-sky-500 to-emerald-500 min-h-screen flex justify-center items-center">
+    class="bg-gradient-to-br from-indigo-500 via-sky-500 to-emerald-500 min-h-screen flex justify-center items-center"
+  >
     <header class="absolute top-8 left-8 right-8">
       <div
-        class="navbar bg-base-100 rounded-full flex flex-row justify-between pr-6 glass">
+        class="navbar bg-base-100 rounded-full flex flex-row justify-between pr-6 glass"
+      >
         <div class="flex gap-2 items-center">
           <a
             href="#"
@@ -28,15 +32,17 @@
             ><img
               src="assets\images\favicon.png"
               class="mr-1 w-8 h-8"
-              alt="R3Charge logo" />R3Charge</a
+              alt="R3Charge logo"
+            />R3Charge</a
           >
         </div>
         <div class="tooltip tooltip-bottom" data-tip="End Day">
           <button
             id="end-day-button"
-            class="btn btn-circle btn-sm bg-red-500 hover:bg-red-400 border-none text-white">
+            class="btn btn-circle btn-sm bg-red-500 hover:bg-red-400 border-none text-white sm:btn-md"
+          >
             <svg
-            class="mr-1 w-4 h-4"
+              class="mr-1 w-4 h-4"
               xmlns="http://www.w3.org/2000/svg"
               width="48"
               height="48"
@@ -46,7 +52,8 @@
               stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="lucide lucide-bed">
+              class="lucide lucide-bed"
+            >
               <path d="M2 4v16" />
               <path d="M2 8h18a2 2 0 0 1 2 2v10" />
               <path d="M2 17h20" />
@@ -60,30 +67,34 @@
       <div class="flex flex-col gap-4 items-center">
         <div
           id="battery-display"
-          class="flex flex-row items-center gap-2 sm:gap-4 ml-6">
+          class="flex flex-row items-center gap-2 sm:gap-4 ml-6"
+        >
           <div
-            class="relative flex items-center w-[200px] h-[100px] rounded-[20px] sm:w-[400px] sm:h-[200px] sm:rounded-[40px] border-4 border-white p-2">
+            class="relative flex items-center w-[200px] h-[100px] rounded-[20px] sm:w-[400px] sm:h-[200px] sm:rounded-[40px] border-4 border-white p-2"
+          >
             <div
               id="battery-bar"
-              class="h-[20px] bg-white rounded-[10px] sm:rounded-[28px] flex justify-center items-center"></div>
+              class="h-[20px] bg-white rounded-[10px] sm:rounded-[28px] flex justify-center items-center"
+            ></div>
             <h2
               id="displayTime"
-              class="absolute w-full text-center top-1/2 left-0 -translate-y-1/2 text-4xl sm:text-4xl font-bold">
+              class="absolute w-full text-center top-1/2 left-0 -translate-y-1/2 text-4xl sm:text-4xl font-bold"
+            >
               50 min
             </h2>
           </div>
           <div
-            class="h-[40px] w-[10px] sm:h-[60px] sm:w-[15px] rounded-r-full bg-white"></div>
+            class="h-[40px] w-[10px] sm:h-[60px] sm:w-[15px] rounded-r-full bg-white"
+          ></div>
         </div>
-        <button
-          id="timer-button"
-          class="btn btn-md w-fit px-6">
+        <button id="timer-button" class="btn btn-md w-fit px-6">
           Begin Working 🔋
         </button>
-        <button
-          id="recharge-button"
-          class="btn w-fit hidden">
+        <button id="recharge-button" class="btn w-fit hidden">
           Recharge 🪫
+        </button>
+        <button id="show-button" class="btn btn-md w-fit px-6">
+          Toggle Timer ⏰
         </button>
       </div>
     </div>
@@ -95,7 +106,8 @@
           </h3>
           <p
             id="modal-text"
-            class="py-4 text-center text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-rose-500 to-purple-500">
+            class="py-4 text-center text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-rose-500 to-purple-500"
+          >
             Time to Break!
           </p>
           <div class="modal-action">
@@ -111,7 +123,8 @@
         id="dismiss-toast"
         class="mb-2 mr-2 max-w-xs bg-white border border-gray-200 rounded-xl shadow-lg dark:bg-gray-800 dark:border-gray-700"
         role="alert"
-        style="display: none">
+        style="display: none"
+      >
         <div class="flex p-4">
           <div class="flex-shrink-0">
             <svg
@@ -120,9 +133,11 @@
               width="16"
               height="16"
               fill="currentColor"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16"
+            >
               <path
-                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+              />
             </svg>
           </div>
           <div class="ms-3 flex justify-between w-full">
@@ -131,13 +146,16 @@
             </p>
             <button
               id="dismiss-button"
-              class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
+              class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+            >
               <svg
                 class="h-4 w-4 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <path
-                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
               </svg>
             </button>
           </div>

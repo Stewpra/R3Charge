@@ -5,7 +5,8 @@ const batteryBar = document.querySelector('#battery-bar');
 const rechargeButton = document.querySelector('#recharge-button');
 const endDayButton = document.querySelector('#end-day-button');
 const dismissButton = document.getElementById('dismiss-button');
-
+const revealButton = document.getElementById('show-button');
+console.log(revealButton);
 async function fetchData(url) {
   let data;
   try {
@@ -33,6 +34,15 @@ function handleStartRecharge() {
   timerButton.style.display = 'none';
   rechargeButton.style.display = 'none';
   startRecharge(30);
+}
+function handleTimeToggle() {
+  console.log(displayTextEl);
+  
+  if (displayTextEl.style.display === 'none') {
+    displayTextEl.style.display = 'block';
+  } else {
+    displayTextEl.style.display = 'none';
+  }
 }
 
 function endWorkTime() {
@@ -87,6 +97,8 @@ function handleEndDay(interval) {
 function init() {
   timerButton.addEventListener('click', handleStartTimer);
   rechargeButton.addEventListener('click', handleStartRecharge);
+  revealButton.addEventListener('click', handleTimeToggle);
+
   initTimer(30);
 }
 
