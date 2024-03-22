@@ -5,12 +5,12 @@ function getTimeUnits(totalSeconds) {
     let minutes = Math.floor(time / 60);
     return minutes;
   }
-
+//modulo get the remainer of the math given to it
   function moduloFromMinutes(time) {
     let modulo = time % 60;
     return modulo;
   }
-
+//By converting seconds from minutes, it allows the display to change based on how much time is left. Minutes and seconds were preferred.
   const minutes = getMinutes(totalSeconds);
   const seconds = moduloFromMinutes(totalSeconds);
   return { minutes, seconds };
@@ -23,7 +23,7 @@ function updateRemainingTimeDisplay({ minutes, seconds }) {
     displayTextEl.textContent = `${seconds} Sec`;
   }
 }
-
+//this function allows battery to change visually with bar
 function updateBattery(time, totalTime) {
   const percentage = (time / totalTime) * 100;
   batteryBar.style.width = `${percentage}%`;
